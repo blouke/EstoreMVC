@@ -11,6 +11,7 @@
 	http://www.springframework.org/schema/context/spring-context-4.0.xsd">
  
 	<context:component-scan base-package="com.estoremvc.controller" />
+	<mvc:annotation-driven />
  
 	<bean id="viewResolver"
 		class="org.springframework.web.servlet.view.UrlBasedViewResolver">
