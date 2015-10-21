@@ -12,6 +12,10 @@
         </servlet-class>
         <load-on-startup>1</load-on-startup>
     </servlet>
+    <servlet-mapping>
+        <servlet-name>estoremvc</servlet-name>
+        <url-pattern>/</url-pattern>
+    </servlet-mapping>
     <servlet>
     	<description>
     	</description>
@@ -19,12 +23,6 @@
     	<servlet-name>EstoreUserServlet</servlet-name>
     	<servlet-class>com.estoremvc.controller.EstoreUserServlet</servlet-class>
     </servlet>
-    <servlet-mapping>
-        <servlet-name>estoremvc</servlet-name>
-        <url-pattern>/welcome.jsp</url-pattern>
-        <url-pattern>/welcome.html</url-pattern>
-        <url-pattern>*.html</url-pattern>
-    </servlet-mapping>
     <servlet-mapping>
     	<servlet-name>EstoreUserServlet</servlet-name>
     	<url-pattern>/EstoreUserServlet</url-pattern>

@@ -56,10 +56,18 @@
                 </div>
                 <div class="box">
                     <div class="container">
+                    	
                 		<div class="row">
-						  <div class="col-md-4">.col-md-4</div>
-						  <div class="col-md-4">.col-md-4</div>
-						  <div class="col-md-4">.col-md-4</div>
+	                		<c:forEach var="product" items="${products}">
+	    						<div class="col-md-4">
+	    							<h2>Product</h2>
+	    							<h3><c:out value="${product.name}"/></h3>
+   									<ul>
+   										<li><c:out value="${product.description}"/></li>
+   										<li>$<c:out value="${product.price}"/></li>
+    								</ul>
+    							</div>
+							</c:forEach>
 						</div>
 					</div>
 				</div>
