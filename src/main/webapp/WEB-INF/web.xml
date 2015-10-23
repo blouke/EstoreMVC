@@ -16,7 +16,7 @@
         <servlet-name>estoremvc</servlet-name>
         <url-pattern>/</url-pattern>
     </servlet-mapping>
-    <servlet>
+   <!--  <servlet>
     	<description>
     	</description>
     	<display-name>EstoreUserServlet</display-name>
@@ -25,7 +25,7 @@
     </servlet>
     <servlet-mapping>
     	<servlet-name>EstoreUserServlet</servlet-name>
-    	<url-pattern>/EstoreUserServlet</url-pattern>
-    </servlet-mapping>
+    	<url-pattern>/users*</url-pattern>
+    </servlet-mapping> -->
   
 </web-app>
