@@ -452,9 +452,15 @@
 
                 <div class="col-md-9" id="customer-orders">
                     <div class="box">
+
                         <h1>My orders</h1>
 
                         <p class="lead">Your orders on one place.</p>
+
+                        <h1>User List</h1>
+
+                        <p class="lead">Users on one place.</p>
+
                         <p class="text-muted">If you have any questions, please feel free to <a href="contact.html">contact us</a>, our customer service center is working for you 24/7.</p>
 
                         <hr>
@@ -463,22 +469,40 @@
                             <table class="table table-hover">
                                 <thead>
                                     <tr>
-                                        <th>Order ID</th>
-                                        <th>Date</th>
-                                        <th>Total</th>
-                                        <th>Status</th>
+                                        <th>User ID</th>
+                                        <th>First Name</th>
+                                        <th>Last Name</th>
+                                        <th>Email</th>
+<<<<<<< HEAD
+                                        <th>Create Date</th>
+                                        <th>Group ID</th>
+=======
+                                        <th>Group ID</th>
                                         <th>Action</th>
+>>>>>>> refs/remotes/origin/santhoshbusi
                                     </tr>
                                 </thead>
                                 <tbody>
-                                	<c:forEach items="${orders}" var="order">
+                                	<c:forEach items="${users}" var="user">
 	                                    <tr>
-	                                    	<% System.out.println(pageContext.findAttribute("order")); %>
-	                                        <th><c:out value="${order.orderId}"></c:out></th>
-	                                        <td><c:out value="${order.orderDate}"></c:out></td>
-	                                        <td><c:out value="${order.orderTotal}"></c:out></td>
-	                                        <td><c:out value="${order.paymentId}"></c:out></td>
-	                                        <td><c:out value="${order.orderStatus}"></c:out></td>
+
+	                                    	<% System.out.println(pageContext.findAttribute("user")); %>
+	                                         <th><c:out value="${user.id}"></c:out></th> --%>
+	                                        <td><c:out value="${user.userID}"></c:out></td>
+	                                         <td><c:out value="${user.firstName}"></c:out></td>
+	                                        <td><c:out value="${user.lastName}"></c:out></td>
+	                                        <td><c:out value="${user.email}"></c:out></td>
+	                                        <td><c:out value="${user.userDate}"></c:out></td>
+	                                        <td><c:out value="${user.groupID}"></c:out></td> 
+
+	                                    	<%-- <% System.out.println(pageContext.findAttribute("user")); %>--%> 
+	                                        <th><c:out value="${user.ID}"></c:out></th>
+	                                        <td><c:out value="${user.firstName}"></c:out></td>
+	                                        <td><c:out value="${user.lastName}"></c:out></td>
+	                                        <td><c:out value="${user.email}"></c:out></td>
+	                                       <%--  <td><c:out value="${user.createdate}"></c:out></td> --%>
+	                                        <td><c:out value="${user.groupID}"></c:out></td>
+>>>>>>> refs/remotes/origin/santhoshbusi
 	                                        <td><span class="label label-info">Being prepared</span>
 	                                        </td>
 	                                        <td><a href="customer-order.html" class="btn btn-primary btn-sm">View</a>
