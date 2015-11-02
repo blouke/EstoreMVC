@@ -6,8 +6,8 @@
 <title>Insert title here</title>
 </head>
 <body>
-
-		bye bye product number ${productId}
+		
+		bye bye ${name} number ${itemId}
 		
 
 </body>
