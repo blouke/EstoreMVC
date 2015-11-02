@@ -223,7 +223,7 @@
 	                                        <td><c:out value="${user.getDateTime()}"></c:out></td>
 	                                        
 	                                        
-	                                        <td>
+	                                        <td><a href="adminDelete/user/${user.getID()}" class="btn btn-primary btn-sm">Delete</a>
 	                                        </td>
 	                                    </tr>
                                     </c:forEach>
