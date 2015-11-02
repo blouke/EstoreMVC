@@ -6,9 +6,12 @@
 <title>Insert title here</title>
 </head>
 <body>
-
-		bye bye product number ${productId}
-		
+		id : ${product1.getId()} <br>
+		name : ${product1.name} <br>
+		price: ${product1.price} <br>
+		description : ${product1.description} <br>
+		categoryId: ${product1.categoryId} <br>
+		image :${product1.image}
 
 </body>
 </html>

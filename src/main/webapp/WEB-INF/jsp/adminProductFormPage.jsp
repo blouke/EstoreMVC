@@ -164,10 +164,10 @@
                                 <li >
                                     <a href="adminOrder#"> All orders</a>
                                 </li>
-                                <li>
+                                <li class="active">
                                     <a href="adminProduct#"> All products</a>
                                 </li>
-                                <li class="active">
+                                <li >
                                     <a href="adminUser#"> All accounts</a>
                                 </li>
                                 <li>
@@ -184,52 +184,28 @@
 
                 <div class="col-md-9" id="customer-orders">
                     <div class="box">
-                        <h1>All accounts</h1>
-	                   <TABLE>
-    					<TR> 
-    					<td>
-	                    </td>
-	                    	<td>
-	                    	<form action="/EstoreMVC/adminSearch/user">
-                                <input type="text" name="id" placeholder="Search by id ..." required style="background-color:rgba(50, 50, 50, 0.2);">
-                                <input type="submit" class="btn btn-primary btn-sm" value="Search">
-							</form>
-							</td>
-						</TR> 
-						</TABLE>
-                        <p class="text-muted">If you have any questions, please feel free to <a href="contact.html">contact us</a>, our customer service center is working for you 24/7.</p>
-
+                        <h1>Product Form</h1>
                         <hr>
 
-                        <div class="table-responsive">
-                            <table class="table table-hover">
-                                <thead>
-                                    <tr>
-                                        <th>User ID</th>
-                                        <th>First name</th>
-                                        <th>Last name</th>
-                                        <th>Email</th>
-                                        <th>Create date</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                	<c:forEach items="${userAdmin}" var="user">
-	                                    <tr>
-	                                    	<% System.out.println(pageContext.findAttribute("user")); %>
-	                         	            <th><c:out value="${user.getID()}"></c:out></th>
-	                                        <td><c:out value="${user.getFirstName()}"></c:out></td>
-	                                        <td><c:out value="${user.getLastName()}"></c:out></td>
-	                                        <td><c:out value="${user.getEmail()}"></c:out></td>
-	                                        <td><c:out value="${user.getDateTime()}"></c:out></td>
-	                                        
-	                                        
-	                                        <td><a href="adminDelete/user/${user.getID()}" class="btn btn-primary btn-sm">Delete</a>
-	                                        </td>
-	                                    </tr>
-                                    </c:forEach>
-                                </tbody>
-                            </table>
-                        </div>
+						<form action="/EstoreMVC/adminAddSuccess" method="post">
+						  <p>
+						  	Name : <input type="text" name="name" value="Computer"/>
+						  </p>
+						  <p>
+						  	Price : <input type="text" name="price" value="1000"/>
+						  </p>
+						  <p>
+						  	description : <input type="text" name="description" value="great"/>
+						  </p>
+						  <p>
+						  	categoryId : <input type="text" name="categoryId" value="1"/>
+						  </p>
+						  <p>
+						  	image : <input type="text" name="image" value="image1"/>
+						  </p>
+						  <input type="submit" value="Submit" />
+						</form>
+
                     </div>
                 </div>
 
@@ -383,11 +359,11 @@
         <div id="copyright">
             <div class="container">
                 <div class="col-md-6">
-                    <p class="pull-left">Â© 2015 Your name goes here.</p>
+                    <p class="pull-left">© 2015 Your name goes here.</p>
 
                 </div>
                 <div class="col-md-6">
-                    <p class="pull-right">Template by <a href="http://bootstrapious.com/e-commerce-templates">Bootstrap Ecommerce Templates</a> with support from <a href="http://kakusei.cz">DesignovÃ© pÅedmÄty</a> 
+                    <p class="pull-right">Template by <a href="http://bootstrapious.com/e-commerce-templates">Bootstrap Ecommerce Templates</a> with support from <a href="http://kakusei.cz">Designové předměty</a> 
                         <!-- Not removing these links is part of the licence conditions of the template. Thanks for understanding :) -->
                     </p>
                 </div>
@@ -419,3 +395,4 @@
 </body>
 
 </html>
+						

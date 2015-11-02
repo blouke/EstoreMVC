@@ -185,6 +185,19 @@
                 <div class="col-md-9" id="customer-orders">
                     <div class="box">
                         <h1>All orders</h1>
+                        
+                        <TABLE>
+    					<TR> 
+    					<td>
+	                    </td>
+	                    	<td>
+	                    	<form action="/EstoreMVC/adminSearch/order">
+                                <input type="text" name="id" placeholder="Search by id ..." required style="background-color:rgba(50, 50, 50, 0.2);">
+                                <input type="submit" class="btn btn-primary btn-sm" value="Search">
+							</form>
+							</td>
+						</TR> 
+						</TABLE>
 
                         <p class="text-muted">If you have any questions, please feel free to <a href="contact.html">contact us</a>, our customer service center is working for you 24/7.</p>
 
@@ -211,7 +224,7 @@
 	                                        <td><c:out value="${order.paymentId}"></c:out></td>
 	                                        <td><c:out value="${order.orderStatus}"></c:out></td>
 	                                        </td>
-	                                        <td><a href="adminDelete/${order.orderId}" class="btn btn-primary btn-sm">Delete</a>
+	                                        <td><a href="adminDelete/order/${order.orderId}" class="btn btn-primary btn-sm">Delete</a>
 	                                        </td>
 	                                    </tr>
                                     </c:forEach>
