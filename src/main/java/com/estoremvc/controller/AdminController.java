@@ -122,26 +122,26 @@ public class AdminController {
 	}
 	
 	// This method is used to edit an item.
-	@RequestMapping(value="/adminEditSuccess", method = RequestMethod.POST)
-	public ModelAndView adminEditSuccess(@RequestParam("id") long id,
-			@RequestParam("name") String name,
-			@RequestParam("price") Double price,
-			@RequestParam("description") String description,
-			@RequestParam("categoryId") long categoryId,
-			@RequestParam("image") String image){
-		ModelAndView model = new ModelAndView("adminEditSuccessPage");
-		Product product1 = new Product();
-		product1.setId(id);
-		product1.setName(name);
-		product1.setPrice(price);
-		product1.setDescription(description);
-		product1.setCategoryId(categoryId);
-		product1.setImage(image);
-		productService.saveProduct(product1); 
-		model.addObject("product1", product1);	
-		return model;
-	}
-	
+//	@RequestMapping(value="/adminEditSuccess", method = RequestMethod.POST)
+//	public ModelAndView adminEditSuccess(@RequestParam("id") long id,
+//			@RequestParam("name") String name,
+//			@RequestParam("price") Double price,
+//			@RequestParam("description") String description,
+//			@RequestParam("categoryId") long categoryId,
+//			@RequestParam("image") String image){
+//		ModelAndView model = new ModelAndView("adminEditSuccessPage");
+//		Product product1 = new Product();
+//		product1.setId(id);
+//		product1.setName(name);
+//		product1.setPrice(price);
+//		product1.setDescription(description);
+//		product1.setCategoryId(categoryId);
+//		product1.setImage(image);
+//		productService.saveProduct(product1); 
+//		model.addObject("product1", product1);	
+//		return model;
+//	}
+//	
 // Search button
 	
 	// This method is used to search an item by id.
