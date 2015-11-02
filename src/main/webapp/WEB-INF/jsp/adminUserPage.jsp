@@ -216,13 +216,14 @@
                                 	<c:forEach items="${userAdmin}" var="user">
 	                                    <tr>
 	                                    	<% System.out.println(pageContext.findAttribute("user")); %>
-	                                        <th><c:out value="${user.id}"></c:out></th>
-	                                        <td><c:out value="${user.first_name}"></c:out></td>
-	                                        <td><c:out value="${user.last_name}"></c:out></td>
-	                                        <td><c:out value="${user.email}"></c:out></td>
-	                                        <td><c:out value="${user.create_date}"></c:out></td>
+	                         	            <th><c:out value="${user.getID()}"></c:out></th>
+	                                        <td><c:out value="${user.getFirstName()}"></c:out></td>
+	                                        <td><c:out value="${user.getLastName()}"></c:out></td>
+	                                        <td><c:out value="${user.getEmail()}"></c:out></td>
+	                                        <td><c:out value="${user.getDateTime()}"></c:out></td>
 	                                        
-	                                        <td><a href="adminDelete/user/${user.orderId}" class="btn btn-primary btn-sm">Delete</a>
+	                                        
+	                                        <td>
 	                                        </td>
 	                                    </tr>
                                     </c:forEach>
