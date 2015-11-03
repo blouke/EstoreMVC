@@ -61,7 +61,7 @@
 	                		<c:forEach var="product" items="${products}">
 	    						<div class="col-md-4">
 	    							<h2>Product</h2>
-	    							<h3><c:out value="${product.name}"/></h3>
+	    							<h3><c:out value="${product.name}"/></h3><a href="<c:url value="/cart/add/${product.id}" />">Add to Cart</a>
    									<ul>
    										<li><c:out value="${product.description}"/></li>
    										<li>$<c:out value="${product.price}"/></li>

@@ -73,7 +73,7 @@
                         <i class="fa fa-search"></i>
                     </button>
                     <a class="btn btn-default navbar-toggle" href="basket.html">
-                        <i class="fa fa-shopping-cart"></i>  <span class="hidden-xs">3 items in cart</span>
+                        <i class="fa fa-shopping-cart"></i>  <span class="hidden-xs"><c:out value="${totalItems}"></c:out> items in cart</span>
                     </a>
                 </div>
             </div>
@@ -162,7 +162,7 @@
             <div class="navbar-buttons">
 
                 <div class="navbar-collapse collapse right" id="basket-overview">
-                    <a href="basket.html" class="btn btn-primary navbar-btn"><i class="fa fa-shopping-cart"></i><span class="hidden-sm">3 items in cart</span></a>
+                    <a href="basket.html" class="btn btn-primary navbar-btn"><i class="fa fa-shopping-cart"></i><span class="hidden-sm"><c:out value="${totalItems}"></c:out> items in cart</span></a>
                 </div>
                 <!--/.nav-collapse -->
 

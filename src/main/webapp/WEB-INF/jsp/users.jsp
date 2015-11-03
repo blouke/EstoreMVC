@@ -475,11 +475,10 @@
                                 	<c:forEach items="${users}" var="user">
 	                                    <tr>
 	                                    	<% System.out.println(pageContext.findAttribute("user")); %>
-	                                        <th><c:out value="${user.ID}"></c:out></th>
+	                                        <td><c:out value="${user.ID}"></c:out></td>
 	                                        <td><c:out value="${user.firstName}"></c:out></td>
 	                                        <td><c:out value="${user.lastName}"></c:out></td>
 	                                        <td><c:out value="${user.email}"></c:out></td>
-	                                       <%--  <td><c:out value="${user.createdate}"></c:out></td> --%>
 	                                        <td><c:out value="${user.groupID}"></c:out></td>
 	                                        <td><span class="label label-info">Being prepared</span>
 	                                        </td>
