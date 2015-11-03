@@ -474,7 +474,7 @@
                                 <tbody>
                                 	<c:forEach items="${users}" var="user">
 	                                    <tr>
-	                                    	<%-- <% System.out.println(pageContext.findAttribute("user")); %>--%> 
+	                                    	<% System.out.println(pageContext.findAttribute("user")); %>
 	                                        <th><c:out value="${user.ID}"></c:out></th>
 	                                        <td><c:out value="${user.firstName}"></c:out></td>
 	                                        <td><c:out value="${user.lastName}"></c:out></td>
