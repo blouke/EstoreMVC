@@ -9,7 +9,7 @@ import com.estore.domain.product.*;
  
 @Controller
 public class HomeController {
-	@RequestMapping("/")
+	@RequestMapping(value={"/", "/products"})
     public ModelAndView home() {
 		//test connecting to JPA project to get current project and send data to the view to display
 		ProductService productService = new ProductService();
