@@ -45,34 +45,50 @@
     <div id="all">
 
         <div id="content">
-            <div id="product-list">
+            <div class="container">
 
-                <div class="box">
-                    <div class="container">
-                        <div class="col-md-12">
-                            <h2>Product List</h2>
+                <div class="col-md-9">
+
+                    <div class="row" id="productMain">
+                        <div class="col-sm-6">
+                            <div id="mainImage">
+                                <img src="<c:url value="/resources/img/detailbig1.jpg" />" alt="" class="img-responsive">
+                            </div>
                         </div>
+                        <div class="col-sm-6">
+                            <div class="box">
+                                <h1 class="text-center">${product.name}</h1>
+                                <p class="goToDescription"><a href="#details" class="scroll-to">Scroll to product details</a>
+                                </p>
+                                <p class="price">$${product.price}</p>
+
+                                <p class="text-center buttons">
+                                    <a href="basket.html" class="btn btn-primary"><i class="fa fa-shopping-cart"></i> Add to cart</a> 
+                                </p>
+
+
+                            </div>
+
+                            
+                        </div>
+
                     </div>
+
+
+                    <div class="box" id="details">
+                        <p>
+                            <h4>Product details</h4>
+                            ${product.description}
+            			</p>
+                    </div>
+
                 </div>
-                <div class="box">
-                    <div class="container">
-                    	
-                		<div class="row">
-	                		<c:forEach var="product" items="${products}">
-	    						<div class="col-md-4">
-	    							<h2>Product</h2>
-	    							<h3><c:out value="${product.name}"/></h3><a href="<c:url value="/cart/add/${product.id}" />" class="btn btn-primary"><i class="fa fa-shopping-cart"></i> Add to cart</a>
-   									<ul>
-   										<li><c:out value="${product.description}"/></li>
-   										<li>$<c:out value="${product.price}"/></li>
-    								</ul>
-    							</div>
-							</c:forEach>
-						</div>
-					</div>
-				</div>
+                <!-- /.col-md-9 -->
             </div>
+            <!-- /.container -->
         </div>
+        <!-- /#content -->
+       
 
     	<%@ include file="/WEB-INF/footer.jsp" %>
 
