@@ -37,7 +37,7 @@ public class EstoreUserServlet extends HttpServlet {
 		if(d == i)
 		{
 			request.setAttribute("user", user);
-			u.getUsersByFirstName(user.getFirstName());
+			//u.getUsersByFirstName(user.getFirstName());
 		}
 	}
 
