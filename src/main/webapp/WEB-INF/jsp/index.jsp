@@ -46,7 +46,7 @@
 
         <div id="content">
             <div id="product-list">
-
+	<c:out value="${message}"></c:out>
                 <div class="box">
                     <div class="container">
                         <div class="col-md-12">

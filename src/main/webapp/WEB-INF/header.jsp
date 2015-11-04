@@ -27,18 +27,19 @@
                         <h4 class="modal-title" id="Login">Customer login</h4>
                     </div>
                     <div class="modal-body">
-                        <form action="orders.html" method="post">
+                        <form action="userCheck" method="post">
                             <div class="form-group">
-                                <input type="text" class="form-control" id="email-modal" placeholder="email">
+                                <input type="text" class="form-control" name="email" id="email-modal" placeholder="email">
                             </div>
                             <div class="form-group">
-                                <input type="password" class="form-control" id="password-modal" placeholder="password">
+                                <input type="password" class="form-control" name="pwd" id="password-modal" placeholder="password">
                             </div>
 
                             <p class="text-center">
-                                <button class="btn btn-primary"><i class="fa fa-sign-in"></i> Log in</button>
+                            	<input type = "submit" value = "Login"/>
+                                <!-- <button class="btn btn-primary"><i class="fa fa-sign-in"></i> Log in</button> -->
                             </p>
-
+							<div style="color:red">${message}</div>
                         </form>
 
                         <p class="text-center text-muted">Not registered yet?</p>

@@ -101,7 +101,7 @@
                         <p class="text-muted">If you have any questions, please feel free to <a href="contact.html">contact us</a>, our customer service center is working for you 24/7.</p>
 
                         <hr>
-
+						<c:out value="${message}"/>
                         <div class="table-responsive">
                             <table class="table table-hover">
                                 <thead>
