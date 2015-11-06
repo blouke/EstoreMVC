@@ -62,6 +62,7 @@
 	    						<div class="col-md-4">
 	    							<h2>Product</h2>
 	    							<h3><c:out value="${product.name}"/></h3><a href="<c:url value="/cart/add/${product.id}" />" class="btn btn-primary"><i class="fa fa-shopping-cart"></i> Add to cart</a>
+	    							<c:out value="${product.id }" />
    									<ul>
    										<li><c:out value="${product.description}"/></li>
    										<li>$<c:out value="${product.price}"/></li>

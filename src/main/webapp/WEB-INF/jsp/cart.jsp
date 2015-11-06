@@ -61,7 +61,7 @@
 
                 <div class="col-md-12">
                     <ul class="breadcrumb">
-                        <li><a href="#">Home</a>
+                        <li><a href="<c:url value="/products"/>">Home</a>
                         </li>
                         <li>Shopping cart</li>
                     </ul>
@@ -71,7 +71,7 @@
 
                     <div class="box">
 
-                        <form method="post" action="checkout1.html">
+                        <form method="post" action="/EstoreMVC/cart/update">
 
                             <h1>Shopping cart</h1>
                             <c:choose>
@@ -85,7 +85,7 @@
 	                                <table class="table">
 	                                    <thead>
 	                                        <tr>
-	                                            <th colspan="2">Product</th>
+	                                            <th colspan="3">Product</th>
 	                                            <th>Quantity</th>
 	                                            <th>Unit price</th>
 	                                            <th colspan="2">Total</th>
@@ -95,16 +95,10 @@
 	                                    
 	                                    	<c:forEach items="${cart.items}" var="item">
 		                                        <tr>
-		                                            <td>
-		                                                <a href="#">
-		                                                    <img src="img/detailsquare.jpg" alt="White Blouse Armani">
-		                                                </a>
-		                                            </td>
-		                                            <td><a href="#"><c:out value="${item.product.description}" /></a>
-		                                            </td>
-		                                            <td>
-		                                                <input type="number" value="<c:out value="${item.quantity}" />" class="form-control">
-		                                            </td>
+		                                        	<td><input type="hidden" name="productId" value="${item.product.id}" /></td>
+		                                            <td><a href="<c:url value="/product/${item.product.id}"/>"><img src="/EstoreMVC/resources/img/${item.product.image}" /></td> 		                                            
+		                                            <td><a href="<c:url value="/product/${item.product.id}"/>"><c:out value="${item.product.description}" /></td>
+		                                            <td><input type="number" name="quantity" value="<c:out value="${item.quantity}" />" class="form-control" /></td>
 		                                            <td><fmt:formatNumber type="currency" currencySymbol="$" maxFractionDigits="2" value="${item.product.price}" /></td>
 		                                            <td><fmt:formatNumber type="currency" currencySymbol="$" maxFractionDigits="2" value="${item.product.price * item.quantity}" /></td>
 		                                            <td><a href="<c:url value="/cart/remove/${item.product.id}"/> "><i class="fa fa-trash-o"></i></a>
@@ -169,7 +163,14 @@
                                     </tr>
                                     <tr>
                                         <td>Shipping and handling</td>
-                                        <c:set var="shippingAmount" value="${10}" />
+                                        <c:choose>
+                                        	<c:when test="${totalItems>0}">
+                                        		<c:set var="shippingAmount" value="${10}" />
+                                        	</c:when>
+                                        	<c:otherwise>
+                                        		<c:set var="shippingAmount" value="${0}" />		
+                                        	</c:otherwise>
+                                        </c:choose>                                        
                                         <th><fmt:formatNumber type="currency" currencySymbol="$" maxFractionDigits="2" value="${shippingAmount}" /></th>
                                     </tr>
                                     <tr>
