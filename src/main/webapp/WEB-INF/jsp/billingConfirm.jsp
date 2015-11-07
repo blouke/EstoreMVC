@@ -64,15 +64,15 @@
 					<div class="container">
 						<div class="col-md-12">
 							<h4 class="text-center">Street: </h4>
-							<p>${model.street}</p>
+							<p>${address.streetAddress}</p>
 							<h4 class="text-center">City: </h4>
-							<p>${model.city}</p>
+							<p>${address.city}</p>
 							<h4 class="text-center">State: </h4>
-							<p>${model.state}</p>
+							<p>${address.state}</p>
 							<h4 class="text-center">Zip Code: </h4>
-							<p>${model.zip}</p>
+							<p>${address.zipCode}</p>
 							<h4 class="text-center">Phone Number: </h4>
-							<p>${model.phone}</p>
+							<p>${address.phone}</p>
 						</div>
 					</div>
 				</div>

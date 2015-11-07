@@ -7,6 +7,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.estore.domain.payment.Address;
+import com.estore.domain.payment.IAddress;
+
 //import com.estore.domain.product.*;
 
 @Controller
@@ -20,18 +23,15 @@ public class BillingController {
 	
 	@RequestMapping(method=RequestMethod.POST)
 	public ModelAndView processBillingSubmit(HttpServletRequest request){
-		
-		//In progress
-		
 		ModelAndView model = new ModelAndView("billingConfirm");
-		Object attributeValue = "123 Main Street";
-		model.addObject("street", attributeValue.toString() );
-		//model.addObject("street", request.getParameter("street"));
-		model.addObject("city", request.getParameter("city"));
-		model.addObject("state", request.getParameter("state"));
-		model.addObject("zip", request.getParameter("zip"));
-		model.addObject("phone", request.getParameter("phone"));
-		
+		IAddress address = new Address();
+		address.setCity(request.getParameter("city"));
+		address.setPhone(request.getParameter("phone"));
+		address.setState(request.getParameter("state"));
+		address.setStreetAddress(request.getParameter("street"));
+		address.setUserId(Integer.parseInt(request.getParameter("userId")));
+		address.setZipCode(request.getParameter("zip"));
+		model.addObject("address", address);
 		return model;
 	}
 }
