@@ -98,7 +98,7 @@
                                                 <li><a href="<c:url value="/products" />">All Products</a>
                                                 </li>
                                                 <c:forEach items="${categories}" var="category">
-                                                	<li><a href="<c:url value="/products/category/${category.name}" />">${category.name}</a>
+                                                	<li><a href="<c:url value="/category/${category.id}" />">${category.name}</a>
                                                 	</li>
 												</c:forEach>
                                             </ul>

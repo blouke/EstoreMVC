@@ -46,16 +46,25 @@
 
         <div id="content">
             <div id="product-list">
+
                 <div class="box">
-                    <div class="container">              	
+                    <div class="container">
+                        <div class="col-md-12">
+                            <h2>${categoryName}</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="container">
+                    	
                 		<div class="row">
-                			<c:forEach var="category" items="${categories}">
-	                		<div class="col-md-3">   							
-   								<div class="boxCategory">
-   									<a href="<c:url value="/category/${category.id}" />"><h3>${category.name}</h3></a>
-   								</div>   							
-   							</div>
-   							</c:forEach>
+	                		<c:forEach var="product" items="${products}">
+	    						<div class="col-md-4 product-small">
+	    							<h3><a href="<c:url value="/product/${product.id}" />"><c:out value="${product.name}"/></a></h3>
+    								<img src="<c:url value="/resources/img/productImages/${product.image}" />" />
+    								<a href="<c:url value="/cart/add/${product.id}" />" class="btn btn-primary"><i class="fa fa-shopping-cart"></i> Add to cart</a>
+    							</div>
+							</c:forEach>
 						</div>
 					</div>
 				</div>

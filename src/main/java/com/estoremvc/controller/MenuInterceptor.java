@@ -21,17 +21,14 @@ public class MenuInterceptor extends HandlerInterceptorAdapter {
 		HttpSession session = request.getSession();
 		//check if cart is in session, if not get cart other wise add cart model to view
 		ICart cart = (ICart)session.getAttribute("cart");
+		IProductCategoryService categoryService = new ProductCategoryService();
         if (modelAndView != null) {
         	if (cart == null)
     			cart = new Cart();
         	modelAndView.addObject("cart", cart);
+        	//get all categories to dynamically display in site navigation     
+    		List<IProductCategory> categories = categoryService.getAllCategories();
+    		modelAndView.addObject("categories", categories); 
         }
-        
-        //get all categories to dynamically display in site navigation
-        ProductCategoryService categoryService = new ProductCategoryService();
-		
-		//get all products
-		List<IProductCategory> categories = categoryService.getAllCategories();
-		modelAndView.addObject("categories", categories); 
 	}
 }

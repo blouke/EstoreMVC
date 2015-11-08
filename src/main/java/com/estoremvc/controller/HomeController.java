@@ -9,16 +9,15 @@ import com.estore.domain.product.*;
  
 @Controller
 public class HomeController {
-	@RequestMapping(value={"/", "/products"})
+	@RequestMapping(value={"/"})
     public ModelAndView home() {
-		//test connecting to JPA project to get current project and send data to the view to display
-		ProductService productService = new ProductService();
-		
+		ModelAndView model = new ModelAndView("index");
+		//get all categories to dynamically display in site navigation
+        ProductCategoryService categoryService = new ProductCategoryService();	
 		//get all products
-		List<IProduct> resultList = productService.getAllProducts();
-		
-		//return view and pass products to view
-		return new ModelAndView("index", "products", resultList);
+		List<IProductCategory> categories = categoryService.getAllCategories();
+		model.addObject("categories", categories); 
+		return model;
     }
  
 }
