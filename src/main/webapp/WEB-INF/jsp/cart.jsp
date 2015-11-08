@@ -93,7 +93,7 @@
 	                                    	<c:forEach items="${cart.items}" var="item">
 		                                        <tr>
 		                                        	<td><input type="hidden" name="productId" value="${item.product.id}" /></td>
-		                                            <td><a href="<c:url value="/product/${item.product.id}"/>"><img src="/EstoreMVC/resources/img/${item.product.image}" /></td> 		                                            
+		                                            <td><a href="<c:url value="/product/${item.product.id}"/>"><img src="/EstoreMVC/resources/img/productImages/${item.product.image}" /></td> 		                                            
 		                                            <td><a href="<c:url value="/product/${item.product.id}"/>"><c:out value="${item.product.description}" /></td>
 		                                            <td><input type="number" name="quantity" value="<c:out value="${item.quantity}" />" class="form-control" /></td>
 		                                            <td><fmt:formatNumber type="currency" currencySymbol="$" maxFractionDigits="2" value="${item.product.price}" /></td>
