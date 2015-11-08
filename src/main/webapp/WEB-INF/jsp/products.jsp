@@ -46,7 +46,6 @@
 
         <div id="content">
             <div id="product-list">
-
                 <div class="box">
                     <div class="container">
                         <div class="col-md-12">
@@ -56,15 +55,25 @@
                 </div>
                 <div class="box">
                     <div class="container">
-                    	
-                		<div class="row">
-	                		<c:forEach var="product" items="${products}">
-	    						<div class="col-md-4 product-small">
-	    							<h3><a href="<c:url value="/product/${product.id}" />"><c:out value="${product.name}"/></a></h3>
-    								<img src="<c:url value="/resources/img/productImages/${product.image}" />" />
-    								<a href="<c:url value="/cart/add/${product.id}" />" class="btn btn-primary"><i class="fa fa-shopping-cart"></i> Add to cart</a>
-    							</div>
+                    	<nav class="paging">
+						  <ul class="pagination" data-category="${catId}" data-baseurl="${pageContext.request.contextPath}" data-total="${pagedProducts.pageCount}">
+						    <li class="previous disabled">
+						      <a href="javascript:void(0)" aria-label="Previous">
+						        <span aria-hidden="true">&laquo;</span>
+						      </a>
+						    </li>
+						    <c:forEach begin="1" end="${pagedProducts.pageCount}" varStatus="loop">
+    							<li class="getPage" data-page="${loop.index}"><a href="javascript:void(0)">${loop.index}</a></li>
 							</c:forEach>
+						    <li class="next ${pagedProducts.pageCount > 1 ? '' : 'disabled'}">
+						      <a href="javascript:void(0)" aria-label="Next">
+						        <span aria-hidden="true">&raquo;</span>
+						      </a>
+						    </li>
+						  </ul>
+						</nav>
+                		<div class="row productListing">
+                			<%@ include file="/WEB-INF/jsp/productListPartial.jsp" %>
 						</div>
 					</div>
 				</div>

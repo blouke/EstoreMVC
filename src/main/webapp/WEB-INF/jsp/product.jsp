@@ -52,7 +52,7 @@
                     <div class="row" id="productMain">
                         <div class="col-sm-6">
                             <div id="mainImage">
-                                <img src="<c:url value="/resources/img/detailbig1.jpg" />" alt="" class="img-responsive">
+                                <img src="<c:url value="/resources/img/productImages/${product.image}" />" alt="" class="img-responsive">
                             </div>
                         </div>
                         <div class="col-sm-6">
@@ -60,10 +60,13 @@
                                 <h1 class="text-center">${product.name}</h1>
                                 <p class="goToDescription"><a href="#details" class="scroll-to">Scroll to product details</a>
                                 </p>
-                                <p class="price">$${product.price}</p>
+                                <p class="price">
+                                	<fmt:setLocale value="en_US"/>
+									<fmt:formatNumber value="${product.price}" type="currency"/>
+                                </p>
 
                                 <p class="text-center buttons">
-                                    <a href="basket.html" class="btn btn-primary"><i class="fa fa-shopping-cart"></i> Add to cart</a> 
+                                    <a href="<c:url value="/cart/add/${product.id}" />" class="btn btn-primary"><i class="fa fa-shopping-cart"></i> Add to cart</a>
                                 </p>
 
 
