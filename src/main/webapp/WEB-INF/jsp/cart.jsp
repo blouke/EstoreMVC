@@ -47,10 +47,7 @@
 
 <body>
 	
-	<c:set var="totalItems" value="${0}" />
-	<c:forEach items="${cart.items}" var="item">
-		<c:set var="totalItems" value="${totalItems+item.quantity}" />
-	</c:forEach>
+	
 	
 	<%@ include file="/WEB-INF/header.jsp"%>
 	

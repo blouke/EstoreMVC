@@ -1,5 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+	<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+    
+    <c:set var="totalItems" value="${0}" />
+	<c:forEach items="${cart.items}" var="item">
+		<c:set var="totalItems" value="${totalItems+item.quantity}" />
+	</c:forEach>
     <!-- *** TOPBAR ***-->
 	<div id="top">
     	<div class="container">
@@ -10,10 +17,6 @@
                     <li><a href="#" data-toggle="modal" data-target="#login-modal">Login</a>
                     </li>
                     <li><a href="register.html">Register</a>
-                    </li>
-                    <li><a href="contact.html">Contact</a>
-                    </li>
-                    <li><a href="#">Recently viewed</a>
                     </li>
                 </ul>
             </div>

@@ -21,5 +21,9 @@
 		<property name="suffix" value=".jsp" />
 	</bean>
 	
+	<mvc:interceptors>
+    	<bean class="com.estoremvc.controller.MenuInterceptor" autowire="constructor" />
+	</mvc:interceptors>
+	
 	<mvc:resources mapping="/resources/**" location="/resources/" />
 </beans>
