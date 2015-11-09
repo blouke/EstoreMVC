@@ -10,8 +10,6 @@ import org.springframework.web.servlet.ModelAndView;
 import com.estore.domain.payment.Address;
 import com.estore.domain.payment.IAddress;
 
-//import com.estore.domain.product.*;
-
 @Controller
 @RequestMapping("/billing")
 public class BillingController {

@@ -64,7 +64,7 @@
 				<form class="form-horizontal" role="form" method="POST">
 					<input type="hidden" name="userId" value="1"/>
 					<div class="form-group">
-						<label class="control-label col-sm-2" for="street">Stree Address:</label>
+						<label class="control-label col-sm-2" for="street">Street Address:</label>
 						<div class="col-sm-10">
 							<input type="text" class="form-control" name="street" placeholder="Enter Street">
 						</div>
@@ -143,8 +143,7 @@
 						</div>
 					</div>
 					<div class="form-group">
-						<label class="control-label col-sm-2" for="phone">Phone
-							Number:</label>
+						<label class="control-label col-sm-2" for="phone">Phone Number:</label>
 						<div class="col-sm-10">
 							<input type="text" class="form-control" name="phone"
 								placeholder="Enter Phone Number">
