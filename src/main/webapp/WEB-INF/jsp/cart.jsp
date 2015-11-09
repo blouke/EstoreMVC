@@ -126,9 +126,8 @@
                                     <a href="<c:url value="/products"/>" class="btn btn-default"><i class="fa fa-chevron-left"></i> Continue shopping</a>
                                 </div>
                                 <div class="pull-right">
-                                    <button class="btn btn-default"><i class="fa fa-refresh"></i> Update basket</button>
-                                    <button type="submit" class="btn btn-primary">Proceed to checkout <i class="fa fa-chevron-right"></i>
-                                    </button>
+                                    <button type="submit" class="btn btn-default"><i class="fa fa-refresh"></i> Update cart</button>
+                                    <button type="button" class="btn btn-primary" onClick="window.location='/EstoreMVC/billing'">Proceed to checkout <i class="fa fa-chevron-right"></i></button>
                                 </div>
                             </div>
 
