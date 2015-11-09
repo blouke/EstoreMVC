@@ -19,6 +19,8 @@ public class BillingController {
 		return new ModelAndView("billing");
 	}
 	
+	//Just for testing form output
+	//Not necessary for final website
 	@RequestMapping(method=RequestMethod.POST)
 	public ModelAndView processBillingSubmit(HttpServletRequest request){
 		ModelAndView model = new ModelAndView("billingConfirm");
