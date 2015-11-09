@@ -1,5 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+	<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+    
+    <c:set var="totalItems" value="${0}" />
+	<c:forEach items="${cart.items}" var="item">
+		<c:set var="totalItems" value="${totalItems+item.quantity}" />
+	</c:forEach>
     <!-- *** TOPBAR ***-->
 	<div id="top">
     	<div class="container">
@@ -10,10 +17,6 @@
                     <li><a href="#" data-toggle="modal" data-target="#login-modal">Login</a>
                     </li>
                     <li><a href="register.html">Register</a>
-                    </li>
-                    <li><a href="contact.html">Contact</a>
-                    </li>
-                    <li><a href="#">Recently viewed</a>
                     </li>
                 </ul>
             </div>
@@ -85,72 +88,23 @@
                     <li class="active"><a href="<c:url value="/" />">Home</a>
                     </li>
                     <li class="dropdown yamm-fw">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="200">Category <b class="caret"></b></a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="200">Products <b class="caret"></b></a>
                         <ul class="dropdown-menu">
                             <li>
                                 <div class="yamm-content">
                                     <div class="row">
                                         <div class="col-sm-3">
-                                            <h5>Category</h5>
                                             <ul>
-                                                <li><a href="category.html">Sub-Category</a>
+                                                <li><a href="<c:url value="/products" />">All Products</a>
                                                 </li>
-                                                <li><a href="category.html">Sub-Category</a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                        <div class="col-sm-3">
-                                            <h5>Category</h5>
-                                            <ul>
-                                                <li><a href="category.html">Sub-Category</a>
-                                                </li>
-                                                <li><a href="category.html">Sub-Category</a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                        <div class="col-sm-3">
-                                            <h5>Category</h5>
-                                            <ul>
-                                                <li><a href="category.html">Sub-Category</a>
-                                                </li>
-                                                <li><a href="category.html">Sub-Category</a>
-                                                </li>
+                                                <c:forEach items="${categories}" var="category">
+                                                	<li><a href="<c:url value="/category/${category.id}" />">${category.name}</a>
+                                                	</li>
+												</c:forEach>
                                             </ul>
                                         </div>
                                     </div>
                                 </div>
-                                <!-- /.yamm-content -->
-                            </li>
-                        </ul>
-                    </li>
-
-                    <li class="dropdown yamm-fw">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="200">Category <b class="caret"></b></a>
-                        <ul class="dropdown-menu">
-                            <li>
-                                <div class="yamm-content">
-                                    <div class="row">
-                                        <div class="col-sm-3">
-                                            <h5>Category</h5>
-                                            <ul>
-                                                <li><a href="category.html">Sub-Category</a>
-                                                </li>
-                                                <li><a href="category.html">Sub-Category</a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                        <div class="col-sm-3">
-                                            <h5>Category</h5>
-                                            <ul>
-                                                <li><a href="category.html">Sub-Category</a>
-                                                </li>
-                                                <li><a href="category.html">Sub-Category</a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- /.yamm-content -->
                             </li>
                         </ul>
                     </li>

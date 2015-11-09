@@ -8,3 +8,4 @@
     <script src="<c:url value="/resources/js/bootstrap-hover-dropdown.js" />"></script>
     <script src="<c:url value="/resources/js/owl.carousel.min.js" />"></script>
     <script src="<c:url value="/resources/js/front.js" />"></script>
+    <script src="<c:url value="/resources/js/estore-main.js" />"></script>

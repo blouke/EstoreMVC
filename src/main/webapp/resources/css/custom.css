@@ -1,1 +1,27 @@
 /** Your theme modifications here **/
+
+.boxCategory a {
+	color: #ffffff;
+	width: 100%;
+    float: left;
+    background-color: #4fbfa8;
+    color: white;
+    padding: 40px;
+    text-align: center;
+    display:block;
+    margin-bottom:15px;
+}
+
+.product-small img
+{
+    max-height: 225px;
+    display: block;
+    margin-bottom: 24px;
+    margin: 0px auto 20px;
+}
+
+.col-md-4.product-small {
+    text-align: center;
+    margin-bottom:20px;
+    height: 385px;
+}

@@ -16,17 +16,6 @@
         <servlet-name>estoremvc</servlet-name>
         <url-pattern>/</url-pattern>
     </servlet-mapping>
-   <!--  <servlet>
-    	<description>
-    	</description>
-    	<display-name>EstoreUserServlet</display-name>
-    	<servlet-name>EstoreUserServlet</servlet-name>
-    	<servlet-class>com.estoremvc.controller.EstoreUserServlet</servlet-class>
-    </servlet>
-    <servlet-mapping>
-    	<servlet-name>EstoreUserServlet</servlet-name>
-    	<url-pattern>/users*</url-pattern>
-    </servlet-mapping> -->
   
   	<persistence-context-ref>
     	<persistence-context-ref-name>Estore</persistence-context-ref-name>
