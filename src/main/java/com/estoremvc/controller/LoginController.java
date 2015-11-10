@@ -14,6 +14,7 @@ import com.estore.domain.user.IUser;
 import com.estore.domain.user.User;
 import com.estore.domain.user.UserGroup;
 import com.estore.domain.user.UserService;
+import com.estore.utility.PasswordUtil;
 
 @Controller
 public class LoginController 
@@ -26,8 +27,9 @@ public class LoginController
 		String email = request.getParameter("email");
 		IUser user = userService.getUserByEmail(email);
 		if (user != null){
-			String password = user.getPasswordHash();
-			if (password.equals(request.getParameter("password"))){
+			String passwordHash = user.getPasswordHash();
+			String passwordChallengeHash = PasswordUtil.hashPassword(request.getParameter("password"));
+			if (passwordHash.equals(passwordChallengeHash)){
 				HttpSession session = request.getSession();
 				session.setAttribute("userId", user.getId());
 				ModelAndView model = new ModelAndView("billing");
@@ -55,7 +57,8 @@ public class LoginController
         user.setFirstName(request.getParameter("firstName"));
         user.setLastName(request.getParameter("lastName"));
         user.setEmail(request.getParameter("email"));
-        user.setPasswordHash(request.getParameter("password"));
+        String password = PasswordUtil.hashPassword(request.getParameter("password"));
+        user.setPasswordHash(password);
         user.setCreateDate(new Date());
         
         UserGroup userGroup = userService.getUserGroupById(2);
