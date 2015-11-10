@@ -127,7 +127,7 @@
                                 </div>
                                 <div class="pull-right">
                                     <button type="submit" class="btn btn-default"><i class="fa fa-refresh"></i> Update cart</button>
-                                    <button type="button" class="btn btn-primary" onClick="window.location='/EstoreMVC/billing'">Proceed to checkout <i class="fa fa-chevron-right"></i></button>
+                                    <button type="button" class="btn btn-primary" onClick="window.location='/EstoreMVC/cart/checkout'">Proceed to checkout <i class="fa fa-chevron-right"></i></button>
                                 </div>
                             </div>
 

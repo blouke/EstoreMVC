@@ -21,130 +21,25 @@
     <link href='http://fonts.googleapis.com/css?family=Roboto:400,500,700,300,100' rel='stylesheet' type='text/css'>
 
     <!-- styles -->
-    <link href="<c:url value="resources/css/font-awesome.css" />" rel="stylesheet">
-    <link href="<c:url value="resources/css/bootstrap.min.css" />" rel="stylesheet">
-    <link href="<c:url value="resources/css/animate.min.css" />" rel="stylesheet">
-    <link href="<c:url value="resources/css/owl.carousel.css" />" rel="stylesheet">
-    <link href="<c:url value="resources/css/owl.theme.css" />" rel="stylesheet">
+    <link href="<c:url value="/resources/css/font-awesome.css" />" rel="stylesheet">
+    <link href="<c:url value="/resources/css/bootstrap.min.css" />" rel="stylesheet">
+    <link href="<c:url value="/resources/css/animate.min.css" />" rel="stylesheet">
+    <link href="<c:url value="/resources/css/owl.carousel.css" />" rel="stylesheet">
+    <link href="<c:url value="/resources/css/owl.theme.css" />" rel="stylesheet">
 
     <!-- theme stylesheet -->
-    <link href="<c:url value="resources/css/style.default.css" />" rel="stylesheet" id="theme-stylesheet">
+    <link href="<c:url value="/resources/css/style.default.css" />" rel="stylesheet" id="theme-stylesheet">
 
     <!-- your stylesheet with modifications -->
-    <link href="<c:url value="resources/css/custom.css" />" rel="stylesheet">
+    <link href="<c:url value="/resources/css/custom.css" />" rel="stylesheet">
 
-    <script src="<c:url value="resources/js/respond.min.js" />"></script>
-
-    <!--  <link rel="shortcut icon" href="favicon.png">		-->
-
-
+    <script src="<c:url value="/resources/js/respond.min.js" />"></script>
 
 </head>
 
 <body>
-    <!-- *** TOPBAR ***
- _________________________________________________________ -->
-    <div id="top">
-        <div class="container">
-            <div class="col-md-6 offer" data-animate="fadeInDown">
-                <a href="#" class="btn btn-success btn-sm" data-animate-hover="shake">Offer of the day</a>  <a href="#">Get flat 35% off on orders over $50!</a>
-            </div>
-            <div class="col-md-6" data-animate="fadeInDown">
-                <ul class="menu">
-                    <li><a href="#" data-toggle="modal" data-target="#login-modal">Login</a>
-                    </li>
-                    <li><a href="register.html">Register</a>
-                    </li>
-                    <li><a href="contact.html">Contact</a>
-                    </li>
-                    <li><a href="#">Recently viewed</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-        <div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="Login" aria-hidden="true">
-            <div class="modal-dialog modal-sm">
 
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                        <h4 class="modal-title" id="Login">Customer login</h4>
-                    </div>
-                    <div class="modal-body">
-                        <form action="customer-orders.html" method="post">
-                            <div class="form-group">
-                                <input type="text" class="form-control" id="email-modal" placeholder="email">
-                            </div>
-                            <div class="form-group">
-                                <input type="password" class="form-control" id="password-modal" placeholder="password">
-                            </div>
-
-                            <p class="text-center">
-                                <button class="btn btn-primary"><i class="fa fa-sign-in"></i> Log in</button>
-                            </p>
-
-                        </form>
-
-                        <p class="text-center text-muted">Not registered yet?</p>
-                        <p class="text-center text-muted"><a href="register.html"><strong>Register now</strong></a>! It is easy and done in 1&nbsp;minute and gives you access to special discounts and much more!</p>
-
-                    </div>
-                </div>
-            </div>
-        </div>
-
-    </div>
-
-    <!-- *** TOP BAR END *** -->
-
-    <!-- *** NAVBAR ***
- _________________________________________________________ -->
-
-    <div class="navbar navbar-default yamm" role="navigation" id="navbar">
-        <div class="container">
-            <div class="navbar-header">
-
-                <a class="navbar-brand home" href="index.html" data-animate-hover="bounce">
-                    <img src="img/logo.png" alt="Obaju logo" class="hidden-xs">
-                    <img src="img/logo-small.png" alt="Obaju logo" class="visible-xs"><span class="sr-only">Obaju - go to homepage</span>
-                </a>
-                <div class="navbar-buttons">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navigation">
-                        <span class="sr-only">Toggle navigation</span>
-                        <i class="fa fa-align-justify"></i>
-                    </button>
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#search">
-                        <span class="sr-only">Toggle search</span>
-                        <i class="fa fa-search"></i>
-                    </button>
-                    <a class="btn btn-default navbar-toggle" href="basket.html">
-                        <i class="fa fa-shopping-cart"></i>  <span class="hidden-xs">3 items in cart</span>
-                    </a>
-                </div>
-            </div>
-            <!--/.navbar-header -->
-
-            <div class="navbar-collapse collapse" id="navigation">
-
-                <ul class="nav navbar-nav navbar-left">
-
-
-
-                </ul>
-
-            </div>
-            
-
-
-            <!--/.nav-collapse -->
-
-        </div>
-        <!-- /.container -->
-    </div>
-    <!-- /#navbar -->
-
-    <!-- *** NAVBAR END *** -->
-
+	<%@ include file="/WEB-INF/header.jsp" %>
     <div id="all">
 
         <div id="content">
@@ -163,16 +58,16 @@
 
                             <ul class="nav nav-pills nav-stacked">
                                 <li >
-                                    <a href="adminOrder#"> All orders</a>
+                                    <a href="/EstoreMVC/adminOrder#"> All orders</a>
                                 </li>
                                 <li class="active">
-                                    <a href="adminProduct#"> All products</a>
+                                    <a href="/EstoreMVC/adminProduct#"> All products</a>
                                 </li>
                                 <li >
-                                    <a href="adminUser#"> All accounts</a>
+                                    <a href="/EstoreMVC/adminUser#"> All accounts</a>
                                 </li>
                                 <li>
-                                    <a href="index.html"><i class="fa fa-sign-out"></i> Logout</a>
+                                    <a href="/EstoreMVC/index.html"><i class="fa fa-sign-out"></i> Logout</a>
                                 </li>
                             </ul>
                         </div>
@@ -188,7 +83,7 @@
                         <h1>All products</h1>
 	                   <TABLE>
     					<TR> 
-    					<td><a href="adminProductForm" class="btn btn-primary btn-sm">Add</a>
+    					<td><a href="/EstoreMVC/adminProductForm" class="btn btn-primary btn-sm">Add</a>
 	                    </td>
 	                    	<td>
 	                    	<form action="/EstoreMVC/adminSearch/product">
@@ -214,6 +109,7 @@
                                         <th>Name</th>
                                         <th>Price</th>
                                         <th>Description</th>
+                                        <th>Category</th>
                                         <th>image</th>
                                     </tr>
                                 </thead>
@@ -225,11 +121,17 @@
 	                                        <td><c:out value="${product.name}"></c:out></td>
 	                                        <td><c:out value="${product.price}"></c:out></td>
 	                                        <td><c:out value="${product.description}"></c:out></td>
-	                                        <td><c:out value="${product.image}"></c:out></td>
 	                                        
-	                                        <td><a href="adminDelete/product/${product.id}" class="btn btn-primary btn-sm">Delete</a>
+	                                        <c:set var="productCategory" value="${ productCategoryAdmin.getCategoryById(product.categoryId)}"/>
+	                                        
+	                                        <td><c:out value="${productCategory.name}"></c:out></td>
+	                                        <td align=left valign=bottom>
+					                        	<img src="<c:url value="/resources/img/productImages/${product.image}" />" alt="" style="width:100px; height:auto;">
+					                        </td>
+	                                        
+	                                        <td><a href="/EstoreMVC/adminDelete/product/${product.id}" class="btn btn-primary btn-sm">Delete</a>
 	                                        </td>
-	                                        <td><a href="adminProductEdit/${product.id}" class="btn btn-primary btn-sm">Edit</a>
+	                                        <td><a href="<c:url value="/adminProductEdit/${product.id}/"/> " class="btn btn-primary btn-sm">Edit</a>
 	                                        </td>
 	                                    </tr>
                                     </c:forEach>
@@ -244,184 +146,10 @@
         </div>
         <!-- /#content -->
 
-
-        <!-- *** FOOTER ***
- _________________________________________________________ -->
-        <div id="footer" data-animate="fadeInUp">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-3 col-sm-6">
-                        <h4>Pages</h4>
-
-                        <ul>
-                            <li><a href="text.html">About us</a>
-                            </li>
-                            <li><a href="text.html">Terms and conditions</a>
-                            </li>
-                            <li><a href="faq.html">FAQ</a>
-                            </li>
-                            <li><a href="contact.html">Contact us</a>
-                            </li>
-                        </ul>
-
-                        <hr>
-
-                        <h4>User section</h4>
-
-                        <ul>
-                            <li><a href="#" data-toggle="modal" data-target="#login-modal">Login</a>
-                            </li>
-                            <li><a href="register.html">Regiter</a>
-                            </li>
-                        </ul>
-
-                        <hr class="hidden-md hidden-lg hidden-sm">
-
-                    </div>
-                    <!-- /.col-md-3 -->
-
-                    <div class="col-md-3 col-sm-6">
-
-                        <h4>Top categories</h4>
-
-                        <h5>Men</h5>
-
-                        <ul>
-                            <li><a href="category.html">T-shirts</a>
-                            </li>
-                            <li><a href="category.html">Shirts</a>
-                            </li>
-                            <li><a href="category.html">Accessories</a>
-                            </li>
-                        </ul>
-
-                        <h5>Ladies</h5>
-                        <ul>
-                            <li><a href="category.html">T-shirts</a>
-                            </li>
-                            <li><a href="category.html">Skirts</a>
-                            </li>
-                            <li><a href="category.html">Pants</a>
-                            </li>
-                            <li><a href="category.html">Accessories</a>
-                            </li>
-                        </ul>
-
-                        <hr class="hidden-md hidden-lg">
-
-                    </div>
-                    <!-- /.col-md-3 -->
-
-                    <div class="col-md-3 col-sm-6">
-
-                        <h4>Where to find us</h4>
-
-                        <p><strong>Obaju Ltd.</strong>
-                            <br>13/25 New Avenue
-                            <br>New Heaven
-                            <br>45Y 73J
-                            <br>England
-                            <br>
-                            <strong>Great Britain</strong>
-                        </p>
-
-                        <a href="contact.html">Go to contact page</a>
-
-                        <hr class="hidden-md hidden-lg">
-
-                    </div>
-                    <!-- /.col-md-3 -->
-
-
-
-                    <div class="col-md-3 col-sm-6">
-
-                        <h4>Get the news</h4>
-
-                        <p class="text-muted">Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
-
-                        <form>
-                            <div class="input-group">
-
-                                <input type="text" class="form-control">
-
-                                <span class="input-group-btn">
-
-			    <button class="btn btn-default" type="button">Subscribe!</button>
-
-			</span>
-
-                            </div>
-                            <!-- /input-group -->
-                        </form>
-
-                        <hr>
-
-                        <h4>Stay in touch</h4>
-
-                        <p class="social">
-                            <a href="#" class="facebook external" data-animate-hover="shake"><i class="fa fa-facebook"></i></a>
-                            <a href="#" class="twitter external" data-animate-hover="shake"><i class="fa fa-twitter"></i></a>
-                            <a href="#" class="instagram external" data-animate-hover="shake"><i class="fa fa-instagram"></i></a>
-                            <a href="#" class="gplus external" data-animate-hover="shake"><i class="fa fa-google-plus"></i></a>
-                            <a href="#" class="email external" data-animate-hover="shake"><i class="fa fa-envelope"></i></a>
-                        </p>
-
-
-                    </div>
-                    <!-- /.col-md-3 -->
-
-                </div>
-                <!-- /.row -->
-
-            </div>
-            <!-- /.container -->
-        </div>
-        <!-- /#footer -->
-
-        <!-- *** FOOTER END *** -->
-
-
-
-
-        <!-- *** COPYRIGHT ***
- _________________________________________________________ -->
-        <div id="copyright">
-            <div class="container">
-                <div class="col-md-6">
-                    <p class="pull-left">Â© 2015 Your name goes here.</p>
-
-                </div>
-                <div class="col-md-6">
-                    <p class="pull-right">Template by <a href="http://bootstrapious.com/e-commerce-templates">Bootstrap Ecommerce Templates</a> with support from <a href="http://kakusei.cz">DesignovÃ© pÅedmÄty</a> 
-                        <!-- Not removing these links is part of the licence conditions of the template. Thanks for understanding :) -->
-                    </p>
-                </div>
-            </div>
-        </div>
-        <!-- *** COPYRIGHT END *** -->
-
-
-
-    </div>
-    <!-- /#all -->
-
-
-    
-
-    <!-- *** SCRIPTS TO INCLUDE ***
- _________________________________________________________ -->
-    <script src="js/jquery-1.11.0.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/jquery.cookie.js"></script>
-    <script src="js/waypoints.min.js"></script>
-    <script src="js/modernizr.js"></script>
-    <script src="js/bootstrap-hover-dropdown.js"></script>
-    <script src="js/owl.carousel.min.js"></script>
-    <script src="js/front.js"></script>
-
-
-
+		<%@ include file="/WEB-INF/footer.jsp" %>
+		
+	</div>
+	<%@ include file="/WEB-INF/scripts.jsp" %>
 </body>
 
 </html>

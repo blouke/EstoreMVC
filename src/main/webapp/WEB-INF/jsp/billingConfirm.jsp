@@ -55,7 +55,7 @@
 				<div class="box">
 					<div class="container">
 						<div class="col-md-12">
-							<h2>Confirm Billing and Shipping Information</h2>
+							<h2>Order Confirmation</h2>
 						</div>
 					</div>
 				</div>
@@ -63,16 +63,8 @@
 				<div class="box">
 					<div class="container">
 						<div class="col-md-12">
-							<h4 class="text-center">Street: </h4>
-							<p>${address.streetAddress}</p>
-							<h4 class="text-center">City: </h4>
-							<p>${address.city}</p>
-							<h4 class="text-center">State: </h4>
-							<p>${address.state}</p>
-							<h4 class="text-center">Zip Code: </h4>
-							<p>${address.zipCode}</p>
-							<h4 class="text-center">Phone Number: </h4>
-							<p>${address.phone}</p>
+							<h4 class="text-center">Successfully placed the order.</h4>
+							<h4 class="text-center"><p>Order Number: <c:out value="${orderId}"/></p></h4>
 						</div>
 					</div>
 				</div>

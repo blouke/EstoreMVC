@@ -32,13 +32,13 @@ public class EstoreUserServlet extends HttpServlet {
 		User user = new User();
 		UserService u = new UserService();
 		String id = request.getParameter("id");
-		long d = user.getID();
-		long i = Long.parseLong(id);
-		if(d == i)
-		{
-			request.setAttribute("user", user);
-			//u.getUsersByFirstName(user.getFirstName());
-		}
+//		long d = user.getID();
+//		long i = Long.parseLong(id);
+//		if(d == i)
+//		{
+//			request.setAttribute("user", user);
+//			//u.getUsersByFirstName(user.getFirstName());
+//		}
 	}
 
 	/**
