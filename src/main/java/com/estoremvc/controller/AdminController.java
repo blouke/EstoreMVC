@@ -163,7 +163,7 @@ public class AdminController {
 			break;
 		case user:
 			model = new ModelAndView("adminSearchUserPage");
-			item = userService.getUserById(id);
+			item = userService.getUserById((int)id);
 			model.addObject("user", (IUser)item);
 			break;
 		default:

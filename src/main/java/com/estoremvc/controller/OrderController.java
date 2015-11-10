@@ -106,28 +106,17 @@ public class OrderController {
 //		model.addObject("cart", cart);
 		return model;
 	}
+
 	
+	@RequestMapping("/cart/checkout")
+	public ModelAndView processCheckout(HttpServletRequest request){
+		HttpSession session = request.getSession();
+		if (session.getAttribute("userId")==null)
+			return new ModelAndView("register");
+		else 
+			return new ModelAndView("billing");
+	}
 	
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 

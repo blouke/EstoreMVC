@@ -22,6 +22,10 @@
     	<persistence-unit-name>Estore</persistence-unit-name>
     </persistence-context-ref>
     
+    <session-config>
+        <session-timeout>30</session-timeout>
+	</session-config>
+    
     <resource-ref>
     	<res-ref-name>EstoreDS</res-ref-name>
     	<res-type>javax.sql.DataSource</res-type>
