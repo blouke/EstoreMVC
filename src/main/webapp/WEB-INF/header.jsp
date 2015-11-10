@@ -108,6 +108,8 @@
                             </li>
                         </ul>
                     </li>
+                    <li ><a href="<c:url value="/adminProduct" />">Admin</a>
+                    </li>
                 </ul>
 
             </div>
