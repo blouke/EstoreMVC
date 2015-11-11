@@ -1,7 +1,6 @@
 **/target/
 /target/
 */target
-target/EstoreMVC.war
 target/classes/com/estoremvc/controller/EstoreHelloWorld.class
 target/EstoreMVC/index.jsp
 target/EstoreMVC/META-INF/MANIFEST.MF
