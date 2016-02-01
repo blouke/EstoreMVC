@@ -79,7 +79,7 @@
                         	<c:if test="${not empty registerErrorMessage}"><c:out value="${registerErrorMessage}"></c:out></c:if>
                         </p>
                         
-                        <form action="/EstoreMVC/register" method="post">
+                        <form action="/register" method="post">
                             <div class="form-group">
                                 <label for="name">First Name</label>
                                 <input type="text" class="form-control" id="name" name="firstName">
@@ -114,7 +114,7 @@
 
                         <hr>
 
-                        <form action="/EstoreMVC/login" method="post">
+                        <form action="/login" method="post">
                             <div class="form-group">
                                 <label for="email">Email</label>
                                 <input type="text" class="form-control" id="email" name="email">

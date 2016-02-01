@@ -68,7 +68,7 @@
 
                     <div class="box">
 
-                        <form method="post" action="/EstoreMVC/cart/update">
+                        <form method="post" action="/cart/update">
 
                             <h1>Shopping cart</h1>
                             <c:choose>
@@ -127,7 +127,7 @@
                                 </div>
                                 <div class="pull-right">
                                     <button type="submit" class="btn btn-default"><i class="fa fa-refresh"></i> Update cart</button>
-                                    <button type="button" class="btn btn-primary" onClick="window.location='/EstoreMVC/cart/checkout'">Proceed to checkout <i class="fa fa-chevron-right"></i></button>
+                                    <button type="button" class="btn btn-primary" onClick="window.location='/cart/checkout'">Proceed to checkout <i class="fa fa-chevron-right"></i></button>
                                 </div>
                             </div>
 

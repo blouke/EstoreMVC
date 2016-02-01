@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Context>
 	<Resource name="EstoreDS" global="EstoreDS" 
-			username="root" password="" 
+			username="dbadmin" password="" 
 			auth="Container" maxIdle="30" maxTotal="100" maxWaitMillis="10000" 
-			driverClassName="com.mysql.jdbc.Driver" type="javax.sql.DataSource" 
+			driverClassName="com.mysql.jdbc.Driver" type="javax.sql.DataSource"
+			factory="org.apache.tomcat.jdbc.pool.DataSourceFactory"  
 			url="jdbc:mysql://127.0.0.1:3306/estore" />
 </Context>

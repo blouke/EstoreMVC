@@ -61,7 +61,7 @@
 					</div>
 				</div>
 
-				<form class="form-horizontal" action="/EstoreMVC/billing" role="form" method="POST">
+				<form class="form-horizontal" action="/billing" role="form" method="POST">
 					
 					<div class="form-group">
 						<label class="control-label col-sm-2" for="street">Street Address:</label>
