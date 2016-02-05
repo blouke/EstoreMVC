@@ -32,7 +32,7 @@ public class LoginController
 			if (passwordHash.equals(passwordChallengeHash)){
 				HttpSession session = request.getSession();
 				session.setAttribute("userId", user.getId());
-				ModelAndView model = new ModelAndView("billing");
+				ModelAndView model = new ModelAndView("checkoutAddress");
 				return model;
 			}
 		} 
@@ -67,7 +67,7 @@ public class LoginController
 		int userId = userService.saveUser(user);
 		HttpSession session = request.getSession();
 		session.setAttribute("userId", userId);		
-		ModelAndView model = new ModelAndView("billing");
+		ModelAndView model = new ModelAndView("checkoutAddress");
 		return model;
 	}
 	

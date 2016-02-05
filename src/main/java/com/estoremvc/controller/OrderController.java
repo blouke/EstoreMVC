@@ -108,13 +108,49 @@ public class OrderController {
 	}
 
 	
-	@RequestMapping("/cart/checkout")
-	public ModelAndView processCheckout(HttpServletRequest request){
+	@RequestMapping("/cart/checkoutAddress")
+	public ModelAndView checkoutAddress(HttpServletRequest request){
 		HttpSession session = request.getSession();
 		if (session.getAttribute("userId")==null)
 			return new ModelAndView("register");
 		else 
-			return new ModelAndView("billing");
+			return new ModelAndView("checkoutAddress");
+	}
+	
+	@RequestMapping("/cart/checkoutDelivery")
+	public ModelAndView checkoutDelivery(HttpServletRequest request){
+		HttpSession session = request.getSession();
+		if (session.getAttribute("userId")==null)
+			return new ModelAndView("register");
+		else 
+			return new ModelAndView("checkoutDelivery");
+	}
+	
+	@RequestMapping("/cart/checkoutPayment")
+	public ModelAndView checkoutPayment(HttpServletRequest request){
+		HttpSession session = request.getSession();
+		if (session.getAttribute("userId")==null)
+			return new ModelAndView("register");
+		else 
+			return new ModelAndView("checkoutPayment");
+	}
+	
+	@RequestMapping("/cart/checkoutReview")
+	public ModelAndView checkoutReview(HttpServletRequest request){
+		HttpSession session = request.getSession();
+		if (session.getAttribute("userId")==null)
+			return new ModelAndView("register");
+		else 
+			return new ModelAndView("checkoutReview");
+	}
+	
+	@RequestMapping("/cart/submit")
+	public ModelAndView checkoutSubmit(HttpServletRequest request){
+		HttpSession session = request.getSession();
+		if (session.getAttribute("userId")==null)
+			return new ModelAndView("register");
+		else 
+			return new ModelAndView("checkoutReview");
 	}
 	
 }

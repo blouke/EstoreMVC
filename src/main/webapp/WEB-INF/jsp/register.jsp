@@ -2,11 +2,16 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 
+<%@taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-
+	
+	<sec:csrfMetaTags/>
+	
     <meta charset="utf-8">
     <meta name="robots" content="all,follow">
     <meta name="googlebot" content="index,follow,snippet,archive">
@@ -80,6 +85,11 @@
                         </p>
                         
                         <form action="/register" method="post">
+                        	
+                        	<!-- spring csrf token -->
+                        	<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
+                        
+                        
                             <div class="form-group">
                                 <label for="name">First Name</label>
                                 <input type="text" class="form-control" id="name" name="firstName">
@@ -115,6 +125,11 @@
                         <hr>
 
                         <form action="/login" method="post">
+                        
+                        	<!-- spring csrf token -->
+                        	<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
+                        
+                        
                             <div class="form-group">
                                 <label for="email">Email</label>
                                 <input type="text" class="form-control" id="email" name="email">

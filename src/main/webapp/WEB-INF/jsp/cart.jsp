@@ -6,7 +6,9 @@
 <html lang="en">
 
 <head>
-
+	
+	<sec:csrfMetaTags/>
+	
     <meta charset="utf-8">
     <meta name="robots" content="all,follow">
     <meta name="googlebot" content="index,follow,snippet,archive">
@@ -39,7 +41,7 @@
 
     <script src="<c:url value="/resources/js/respond.min.js" />"></script>
 
-    <link rel="shortcut icon" href="favicon.png">
+    <!-- <link rel="shortcut icon" href="favicon.png"> -->
 
 
 
@@ -69,7 +71,11 @@
                     <div class="box">
 
                         <form method="post" action="/cart/update">
-
+							
+                        	<!-- spring csrf token -->
+                        	<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
+                        
+                        
                             <h1>Shopping cart</h1>
                             <c:choose>
                             	<c:when test="${totalItems==0}">
@@ -93,7 +99,7 @@
 	                                    	<c:forEach items="${cart.items}" var="item">
 		                                        <tr>
 		                                        	<td><input type="hidden" name="productId" value="${item.product.id}" /></td>
-		                                            <td><a href="<c:url value="/product/${item.product.id}"/>"><img src="/EstoreMVC/resources/img/productImages/${item.product.image}" /></td> 		                                            
+		                                            <td><a href="<c:url value="/product/${item.product.id}"/>"><img src="<c:url value="/resources/img/productImages/${item.product.image}" />" /></td> 		                                            
 		                                            <td><a href="<c:url value="/product/${item.product.id}"/>"><c:out value="${item.product.description}" /></td>
 		                                            <td><input type="number" name="quantity" value="<c:out value="${item.quantity}" />" class="form-control" /></td>
 		                                            <td><fmt:formatNumber type="currency" currencySymbol="$" maxFractionDigits="2" value="${item.product.price}" /></td>
@@ -127,7 +133,7 @@
                                 </div>
                                 <div class="pull-right">
                                     <button type="submit" class="btn btn-default"><i class="fa fa-refresh"></i> Update cart</button>
-                                    <button type="button" class="btn btn-primary" onClick="window.location='/cart/checkout'">Proceed to checkout <i class="fa fa-chevron-right"></i></button>
+                                    <button type="button" class="btn btn-primary" onClick="window.location='/cart/checkoutAddress'">Proceed to checkout <i class="fa fa-chevron-right"></i></button>
                                 </div>
                             </div>
 
@@ -186,8 +192,6 @@
                     </div>
 
 
-
-
                 </div>
                 <!-- /.col-md-3 -->
 
@@ -196,7 +200,7 @@
         </div>
         <!-- /#content -->
 
-        <!-- *** FOOTER ***
+        <!-- *** FOOTER *** -->
 
 		<%@ include file="/WEB-INF/footer.jsp" %>
 
