@@ -62,7 +62,7 @@
         <div class="container">
             <div class="navbar-header">
 
-                <a class="navbar-brand home" href="<c:url value="/" />" data-animate-hover="bounce">
+                <a class="navbar-brand home" href="<c:url value="/" />" > 		<!-- data-animate-hover="bounce"> -->
                     <img src="<c:url value="/resources/img/logo.png" />" alt="Obaju logo" class="hidden-xs">
                     <img src="<c:url value="/resources/img/logo-small.png" />" alt="Obaju logo" class="visible-xs"><span class="sr-only">Obaju - go to homepage</span>
                 </a>
@@ -107,9 +107,9 @@
                                 </div>
                             </li>
                         </ul>
-                    </li>
+                    <!-- </li>
                     <li ><a href="<c:url value="/adminProduct" />">Admin</a>
-                    </li>
+                    </li> -->
                 </ul>
 
             </div>

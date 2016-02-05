@@ -10,7 +10,7 @@
 
 <head>
 	
-	<sec:csrfMetaTags/>
+	<sec:csrfMetaTags/> 
 	
     <meta charset="utf-8">
     <meta name="robots" content="all,follow">
@@ -126,8 +126,8 @@
 
                         <form action="/login" method="post">
                         
-                        	<!-- spring csrf token -->
-                        	<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
+                        	<!-- spring csrf token --> 
+                        	<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" /> 
                         
                         
                             <div class="form-group">
