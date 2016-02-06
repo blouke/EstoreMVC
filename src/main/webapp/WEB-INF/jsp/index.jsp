@@ -45,21 +45,66 @@
     <div id="all">
 
         <div id="content">
-            <div id="product-list">
-                <div class="box">
-                    <div class="container">              	
-                		<div class="row">
-                			<c:forEach var="category" items="${categories}">
-	                		<div class="col-md-3">   							
-   								<div class="boxCategory">
-   									<a href="<c:url value="/category/${category.id}" />"><h3>${category.name}</h3></a>
-   								</div>   							
-   							</div>
-   							</c:forEach>
-						</div>
-					</div>
-				</div>
+        
+        	
+        	
+        	
+			<!-- /#main-slider -->
+        	
+        	<div class="container">
+                <div class="col-md-12">
+                    <div id="main-slider">
+                        <div class="item">
+                            <img src="<c:url value="/resources/img/productImages/blue-pizza-bag.jpg" />" alt="" class="img-responsive" />
+                        </div>
+                        <div class="item">
+                            <img class="img-responsive" src="<c:url value="/resources/img/productImages/red-pizza-bag.jpg" />" alt="" />
+                        </div>
+                        <div class="item">
+                            <img class="img-responsive" src="<c:url value="/resources/img/productImages/black-pizza-bag.jpg" />" alt="" />
+                        </div>
+                    </div>
+                </div>
             </div>
+            
+             <!-- /#main-slider -->
+
+
+			
+			<!-- categories -->
+
+            <div id="categories">
+
+                <div class="container">
+                    <div class="same-height-row">
+                    
+                    <c:forEach var="category" items="${categories}">
+                    
+                        <div class="col-sm-4">
+                            <div class="box same-height clickable">
+                            
+                                <!-- <div class="icon"><i class="fa fa-heart"></i></div> -->
+
+                                <h3><a href="<c:url value="/category/${category.id}" />">${category.name}</a></h3>
+                                <p>${category.description}</p>
+                            </div>
+                        </div>
+
+					</c:forEach>
+
+                    </div>
+                    <!-- /.row -->
+
+                </div>
+                <!-- /.container -->
+
+            </div>
+            <!-- /#categories -->
+
+
+
+        
+            
         </div>
 
     	<%@ include file="/WEB-INF/footer.jsp" %>

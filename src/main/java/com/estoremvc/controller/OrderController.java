@@ -144,14 +144,17 @@ public class OrderController {
 			return new ModelAndView("checkoutReview");
 	}
 	
-	@RequestMapping("/cart/submit")
+	@RequestMapping("/cart/orderConfirm")
 	public ModelAndView checkoutSubmit(HttpServletRequest request){
 		HttpSession session = request.getSession();
 		if (session.getAttribute("userId")==null)
 			return new ModelAndView("register");
-		else 
-			return new ModelAndView("checkoutReview");
+		else { 
+			session.setAttribute("cart", new Cart());
+			return new ModelAndView("orderConfirm");
+		}
 	}
+		
 	
 }
 

@@ -115,19 +115,7 @@
                                         </div>
                                     </div>
 
-                                    <div class="col-sm-6">
-                                        <div class="box shipping-method">
-
-                                            <h4>USPS Next Day</h4>
-
-                                            <p>Get it right on next day - fastest option possible.</p>
-
-                                            <div class="box-footer text-center">
-
-                                                <input type="radio" name="delivery" value="delivery3">
-                                            </div>
-                                        </div>
-                                    </div>
+              
                                 </div>
                                 <!-- /.row -->
 
@@ -164,19 +152,29 @@
                                 <tbody>
                                     <tr>
                                         <td>Order subtotal</td>
-                                        <th>$446.00</th>
+                                        <th><fmt:formatNumber type="currency" currencySymbol="$" maxFractionDigits="2" value="${cart.total}" /></th>
                                     </tr>
                                     <tr>
                                         <td>Shipping and handling</td>
-                                        <th>$10.00</th>
+                                        <c:choose>
+                                        	<c:when test="${totalItems>0}">
+                                        		<c:set var="shippingAmount" value="${10}" />
+                                        	</c:when>
+                                        	<c:otherwise>
+                                        		<c:set var="shippingAmount" value="${0}" />		
+                                        	</c:otherwise>
+                                        </c:choose>                                        
+                                        <th><fmt:formatNumber type="currency" currencySymbol="$" maxFractionDigits="2" value="${shippingAmount}" /></th>
                                     </tr>
                                     <tr>
                                         <td>Tax</td>
-                                        <th>$0.00</th>
+                                        <c:set var="taxAmount" value="${cart.total*0.0625}" />
+                                        <th><fmt:formatNumber type="currency" currencySymbol="$" maxFractionDigits="2" value="${taxAmount}" /></th>
                                     </tr>
                                     <tr class="total">
                                         <td>Total</td>
-                                        <th>$456.00</th>
+                                        <c:set var="totalAmount" value="${cart.total+taxAmount+shippingAmount}" />
+                                        <th><fmt:formatNumber type="currency" currencySymbol="$" maxFractionDigits="2" value="${totalAmount}" /></th>
                                     </tr>
                                 </tbody>
                             </table>

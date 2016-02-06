@@ -41,6 +41,7 @@
     <link href="<c:url value="/resources/css/custom.css" />" rel="stylesheet">
 
     <script src="<c:url value="/resources/js/respond.min.js" />"></script>
+    <script type="text/javascript" src="https://js.stripe.com/v2/"></script>
 
     <link rel="shortcut icon" href="favicon.png">
 
@@ -68,7 +69,7 @@
                 <div class="col-md-9" id="checkout">
 
                     <div class="box">
-                        <form method="post" action="/cart/checkoutReview">
+                        <form method="post" action="/cart/checkoutReview" id="payment-form">
                         	
                         	<!-- spring csrf token -->
                         	<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
@@ -82,7 +83,7 @@
                                 </li>
                                 <li class="active"><a href="#"><i class="fa fa-money"></i><br>Payment Method</a>
                                 </li>
-                                <li class="disabled"><a href="#" />"><i class="fa fa-eye"></i><br>Order Review</a>
+                                <li class="disabled"><a href="#"><i class="fa fa-eye"></i><br>Order Review</a>
                                 </li>
                             </ul>
 
@@ -90,70 +91,41 @@
                                 <div class="row">
                                     <div class="col-sm-6">
                                         <div class="form-group">
-                                            <label for="firstname">Name on Card</label>
-                                            <input type="text" class="form-control" id="firstname">
+                                            <label for="name">Name on Card</label>
+                                            <input type="text" class="form-control" id="name">
                                         </div>
                                     </div>
                                     <div class="col-sm-6">
                                         <div class="form-group">
-                                            <label for="lastname">Card Number</label>
-                                            <input type="text" class="form-control" id="lastname">
+                                            <label for="number">Card Number</label>
+                                            <input type="text" class="form-control" id="number" size="20" data-stripe="number" />
                                         </div>
                                     </div>
                                 </div>
                                 <!-- /.row -->
 
                                 <div class="row">
-                                    <div class="col-sm-6">
+                                    
+                                    <div class="col-sm-6 col-md-3">
                                         <div class="form-group">
-                                            <label for="street">Security Code (CVV2)</label>
-                                            <input type="text" class="form-control" id="street">
+                                            <label for="cvc">Security Code (CVV2)</label>
+                                            <input type="text" class="form-control" id="cvc" size="4" data-stripe="cvc" />
                                         </div>
                                     </div>
+                                    
+                                    <div class="col-sm-6 col-md-3">
+										<div class="form-group">
+                                          	<label>Expiration (MM/YYYY)</label>
+                                          	<input type="text" class="form-control" id="month" size="2" data-stripe="exp-month" />
+                                          	<input type="text" class="form-control" id="year" size="4" data-stripe="exp-year" />
+                                      </div>
+                                    </div>
+                                                                        
+                                    
                                 </div>
                                 <!-- /.row -->
 
-                                <div class="row">
-                                    <div class="col-sm-6 col-md-3">
-                                        <div class="form-group">
-                                            <label for="city">Expiration Date</label>
-                                            <input type="text" class="form-control" id="city">
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-6 col-md-3">
-                                        <div class="form-group">
-                                            <label for="zip">ZIP</label>
-                                            <input type="text" class="form-control" id="zip">
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-6 col-md-3">
-                                        <div class="form-group">
-                                            <label for="state">State</label>
-                                            <select class="form-control" id="state"></select>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-6 col-md-3">
-                                        <div class="form-group">
-                                            <label for="country">Country</label>
-                                            <select class="form-control" id="country"></select>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-sm-6">
-                                        <div class="form-group">
-                                            <label for="phone">Telephone</label>
-                                            <input type="text" class="form-control" id="phone">
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-6">
-                                        <div class="form-group">
-                                            <label for="email">Email</label>
-                                            <input type="text" class="form-control" id="email">
-                                        </div>
-                                    </div>
-
-                                </div>
-                                <!-- /.row -->
+                                
                             </div>
                                                                                  
                             <div class="box-footer">

@@ -89,51 +89,54 @@
 
                             <div class="content">
                                 <div class="table-responsive">
-                                    <table class="table">
-                                        <thead>
-                                            <tr>
-                                                <th colspan="2">Product</th>
-                                                <th>Quantity</th>
-                                                <th>Unit price</th>
-                                                <th>Discount</th>
-                                                <th>Total</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td>
-                                                    <a href="#">
-                                                        <img src="img/detailsquare.jpg" alt="White Blouse Armani">
-                                                    </a>
-                                                </td>
-                                                <td><a href="#">White Blouse Armani</a>
-                                                </td>
-                                                <td>2</td>
-                                                <td>$123.00</td>
-                                                <td>$0.00</td>
-                                                <td>$246.00</td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    <a href="#">
-                                                        <img src="img/basketsquare.jpg" alt="Black Blouse Armani">
-                                                    </a>
-                                                </td>
-                                                <td><a href="#">Black Blouse Armani</a>
-                                                </td>
-                                                <td>1</td>
-                                                <td>$200.00</td>
-                                                <td>$0.00</td>
-                                                <td>$200.00</td>
-                                            </tr>
-                                        </tbody>
-                                        <tfoot>
-                                            <tr>
-                                                <th colspan="5">Total</th>
-                                                <th>$446.00</th>
-                                            </tr>
-                                        </tfoot>
-                                    </table>
+                                         
+                            <h1>Shopping cart</h1>
+                            <c:choose>
+                            	<c:when test="${totalItems==0}">
+                            		<p>Your cart is empty.</p>
+                                </c:when>
+                            	
+								<c:when test="${totalItems>0}">   
+                            		<p class="text-muted">You currently have <c:out value="${totalItems}" /> item(s) in your cart.</p>
+                            		<div class="table-responsive">
+	                                <table class="table">
+	                                    <thead>
+	                                        <tr>
+	                                            <th colspan="3">Product</th>
+	                                            <th>Quantity</th>
+	                                            <th>Unit price</th>
+	                                            <th colspan="2">Total</th>
+	                                        </tr>
+	                                    </thead>
+	                                    <tbody>
+	                                    
+	                                    	<c:forEach items="${cart.items}" var="item">
+		                                        <tr>
+		                                        	<td><input type="hidden" name="productId" value="${item.product.id}" /></td>
+		                                            <td><a href="<c:url value="/product/${item.product.id}"/>"><img src="<c:url value="/resources/img/productImages/${item.product.image}" />" /></td> 		                                            
+		                                            <td><a href="<c:url value="/product/${item.product.id}"/>"><c:out value="${item.product.description}" /></td>
+		                                            <td><input type="number" name="quantity" value="<c:out value="${item.quantity}" />" class="form-control" /></td>
+		                                            <td><fmt:formatNumber type="currency" currencySymbol="$" maxFractionDigits="2" value="${item.product.price}" /></td>
+		                                            <td><fmt:formatNumber type="currency" currencySymbol="$" maxFractionDigits="2" value="${item.product.price * item.quantity}" /></td>
+		                                            <td><a href="<c:url value="/cart/remove/${item.product.id}"/> "><i class="fa fa-trash-o"></i></a>
+		                                            </td>
+		                                        </tr>
+		                                    </c:forEach>  
+	                                    </tbody>
+	                                    
+	                                    <c:if test="${totalItems>0}">
+		                                    <tfoot>
+		                                        <tr>
+		                                            <th colspan="5">Subtotal</th>
+		                                            <th colspan="2"><fmt:formatNumber type="currency" currencySymbol="$" maxFractionDigits="2" value="${cart.total}" /></th>
+		                                        </tr>
+		                                    </tfoot>
+		                                </c:if> 
+	                                </table>
+	                                </div>
+								</c:when>
+								
+							</c:choose>
 
                                 </div>
                                 <!-- /.table-responsive -->
@@ -170,19 +173,29 @@
                                 <tbody>
                                     <tr>
                                         <td>Order subtotal</td>
-                                        <th>$446.00</th>
+                                        <th><fmt:formatNumber type="currency" currencySymbol="$" maxFractionDigits="2" value="${cart.total}" /></th>
                                     </tr>
                                     <tr>
                                         <td>Shipping and handling</td>
-                                        <th>$10.00</th>
+                                        <c:choose>
+                                        	<c:when test="${totalItems>0}">
+                                        		<c:set var="shippingAmount" value="${10}" />
+                                        	</c:when>
+                                        	<c:otherwise>
+                                        		<c:set var="shippingAmount" value="${0}" />		
+                                        	</c:otherwise>
+                                        </c:choose>                                        
+                                        <th><fmt:formatNumber type="currency" currencySymbol="$" maxFractionDigits="2" value="${shippingAmount}" /></th>
                                     </tr>
                                     <tr>
                                         <td>Tax</td>
-                                        <th>$0.00</th>
+                                        <c:set var="taxAmount" value="${cart.total*0.0625}" />
+                                        <th><fmt:formatNumber type="currency" currencySymbol="$" maxFractionDigits="2" value="${taxAmount}" /></th>
                                     </tr>
                                     <tr class="total">
                                         <td>Total</td>
-                                        <th>$456.00</th>
+                                        <c:set var="totalAmount" value="${cart.total+taxAmount+shippingAmount}" />
+                                        <th><fmt:formatNumber type="currency" currencySymbol="$" maxFractionDigits="2" value="${totalAmount}" /></th>
                                     </tr>
                                 </tbody>
                             </table>
