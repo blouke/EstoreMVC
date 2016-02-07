@@ -14,7 +14,7 @@
     <meta name="keywords" content="">
 
     <title>
-        Obaju : e-commerce template
+        Delivery Bags Factory
     </title>
 
     <meta name="keywords" content="">

@@ -13,7 +13,7 @@
 <meta name="author" content="Ondrej Svestka | ondrejsvestka.cz">
 <meta name="keywords" content="">
 
-<title>Obaju : e-commerce template</title>
+<title>Delivery Bags Factory</title>
 
 <meta name="keywords" content="">
 

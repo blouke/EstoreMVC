@@ -93,6 +93,14 @@
     	<scope>provided</scope>
     </dependency>
     
+    
+    <dependency>
+  		<groupId>com.stripe</groupId>
+  		<artifactId>stripe-java</artifactId>
+  		<version>1.42.0</version>
+	</dependency>
+
+    
   </dependencies>
   <build>
     <finalName>EstoreMVC</finalName>

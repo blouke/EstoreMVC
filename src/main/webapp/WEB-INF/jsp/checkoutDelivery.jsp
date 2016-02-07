@@ -19,7 +19,7 @@
     <meta name="keywords" content="">
 
     <title>
-        Obaju : e-commerce template
+        Delivery Bags Factory
     </title>
 
     <meta name="keywords" content="">
@@ -91,26 +91,30 @@
                                     <div class="col-sm-6">
                                         <div class="box shipping-method">
 
-                                            <h4>USPS Next Day</h4>
+                                            <h4>USPS Priority Mail</h4>
 
-                                            <p>Get it right on next day - fastest option possible.</p>
+                                            <p>Estimated 1-3 Days</p>
+                                            
+                                            <div class="text-center"><h3> $ 17 </h3></div>
 
                                             <div class="box-footer text-center">
 
-                                                <input type="radio" name="delivery" value="delivery1">
+                                                <input type="radio" name="delivery" value="priority">
                                             </div>
                                         </div>
                                     </div>
                                     <div class="col-sm-6">
                                         <div class="box shipping-method">
 
-                                            <h4>USPS Next Day</h4>
+                                            <h4>USPS Standard Mail</h4>
 
-                                            <p>Get it right on next day - fastest option possible.</p>
+                                            <p>Estimated 2-8 Days</p>
+                                            
+                                            <div class="text-center"><h3> $ 10 </h3></div>
 
                                             <div class="box-footer text-center">
 
-                                                <input type="radio" name="delivery" value="delivery2">
+                                                <input type="radio" name="delivery" value="standard">
                                             </div>
                                         </div>
                                     </div>
@@ -155,15 +159,18 @@
                                         <th><fmt:formatNumber type="currency" currencySymbol="$" maxFractionDigits="2" value="${cart.total}" /></th>
                                     </tr>
                                     <tr>
+                                        
                                         <td>Shipping and handling</td>
+                                        
                                         <c:choose>
-                                        	<c:when test="${totalItems>0}">
-                                        		<c:set var="shippingAmount" value="${10}" />
+                                        	<c:when test="${not empty shippingCharges}">
+                                        		<c:set var="shippingAmount" value="${shippingCharges}" />
                                         	</c:when>
                                         	<c:otherwise>
                                         		<c:set var="shippingAmount" value="${0}" />		
                                         	</c:otherwise>
-                                        </c:choose>                                        
+                                        </c:choose>  
+                                                                          
                                         <th><fmt:formatNumber type="currency" currencySymbol="$" maxFractionDigits="2" value="${shippingAmount}" /></th>
                                     </tr>
                                     <tr>

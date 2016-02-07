@@ -19,7 +19,7 @@
     <meta name="keywords" content="">
 
     <title>
-        EStore: Cart
+        Delivery Bags Factory
     </title>
 
     <meta name="keywords" content="">
@@ -166,14 +166,16 @@
                                     </tr>
                                     <tr>
                                         <td>Shipping and handling</td>
+                                        
                                         <c:choose>
-                                        	<c:when test="${totalItems>0}">
-                                        		<c:set var="shippingAmount" value="${10}" />
+                                        	<c:when test="${not empty shippingCharges}">
+                                        		<c:set var="shippingAmount" value="${shippingCharges}" />
                                         	</c:when>
                                         	<c:otherwise>
                                         		<c:set var="shippingAmount" value="${0}" />		
                                         	</c:otherwise>
-                                        </c:choose>                                        
+                                        </c:choose>       
+                                        
                                         <th><fmt:formatNumber type="currency" currencySymbol="$" maxFractionDigits="2" value="${shippingAmount}" /></th>
                                     </tr>
                                     <tr>
